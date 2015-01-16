@@ -6,8 +6,16 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="container-fluid">
 
+	<div class="pull-right">
+		<% if current_user %>
+			Logged in as <%= current_user.first_name if current_user%> | <%= link_to "Log Out", logout_path, class: "btn btn-primary" %>
+		<% else %>
+			<%= link_to "Log In", login_path, class: "btn btn-primary" %> | <%= link_to "Sign Up", signup_path, class: "btn btn-success" %>
+		<% end %>
+	</div>
+	
 <%= yield %>
 
 </body>

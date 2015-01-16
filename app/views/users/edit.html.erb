@@ -1,0 +1,21 @@
+<h2>Edit Profile</h2>
+
+	<%= form_for @user do |f| %>
+		<%= f.text_field :first_name, placeholder: "First Name" %><br>
+		<%= f.text_field :last_name, placeholder: "Last Name" %><br>
+		<%= f.number_field :age, placeholder: "Age" %><br>
+		<!-- Gender: <%= f.text_field :gender, placeholder: "Gender" %> gonna use radio button-->
+	 	<%= f.text_field :email, placeholder: "E-mail Address" %><br>
+	 	<!-- <%= f.number_field :height, placeholder: "" %><br>
+	 	<%= f.number_field :weight, placeholder: "" %><br> -->
+	 	<%= f.text_field :location, placeholder: "Location - city state" %><br>
+	 	<%= f.text_field :gym, placeholder: "Which gym do you go to?" %><br>
+	 	<%= f.text_field :goal, placeholder: "What are your fitness goals" %><br>
+
+      <%= f.submit "Submit these changes!" %>
+
+  <% end %>
+
+    </br>
+
+    <%= link_to "Back to profile", users_path %>
