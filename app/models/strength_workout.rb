@@ -6,5 +6,5 @@ class StrengthWorkout
   field :sets, type: Integer
   field :reps, type: Integer
 
-  embedded_in :users, type: String
+  belongs_to :users
 end

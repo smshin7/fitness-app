@@ -5,5 +5,5 @@ class CardioWorkout
   field :time, type: Float
   field :day_of_week, type: String
 
-  embedded_in :users, type: String
+  belongs_to :user
 end

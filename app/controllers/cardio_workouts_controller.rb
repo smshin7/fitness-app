@@ -1,6 +1,6 @@
 class CardioWorkoutsController < ApplicationController
 	before_action :authorize
-	
+
 	def index
 		@cardio_workouts = CardioWorkout.all
 	end
@@ -16,7 +16,7 @@ class CardioWorkoutsController < ApplicationController
 		@user.cardio_workouts.push(@cardio_workout)
 		
 		if @user.save
-			redirect_to user_path(@user)
+			redirect_to user_path(@cardio_workout.user)
 		else
 			render :new
 		end
