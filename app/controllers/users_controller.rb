@@ -24,17 +24,17 @@ class UsersController < ApplicationController
 
 	def update
 			@user = User.find(params[:id])
-		if @user.update_attributes(params.require(:user).permit(:first_name, :last_name, :age, :gender, :email, :height, :weight, :location, :gym, :goal))
-			redirect_to user_path(user)
+		if @user.update(params.require(:user).permit(:first_name, :last_name, :age, :gender, :email, :height, :weight, :location, :gym, :goal))
+			redirect_to @user
 		else
 			render :edit
 		end
 	end
 
 	def destroy
-		@user = User.find_by(params[:user_id])
+		@user = User.find(params[:id])
 		@user.destroy
-		redirect_to user_path(@user)
+		redirect_to @user
 	end
 
 end

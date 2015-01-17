@@ -13,14 +13,12 @@ class User
   field :gym, type: String
   field :goal, type: String
   field :password_digest, type: String
-  has_many :cardio_workouts
-  accepts_nested_attributes_for :cardio_workouts
-  has_many :strength_workouts
-  accepts_nested_attributes_for :strength_workouts
+  has_many :workouts
+  accepts_nested_attributes_for :workouts
 
   has_secure_password
 
-  validates :first_name, presence: true
+  validates :first_name, :last_name, :email, :age, presence: true
   validates :email, uniqueness: {case_sensitive: false}
   validates :password, confirmation: true
 

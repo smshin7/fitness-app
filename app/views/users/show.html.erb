@@ -1,18 +1,5 @@
-<h1>Workout of the Day</h1>
-
-<p>Cardio: </p>
-
-<p>Strength: </p>
-
-<%= link_to "View Your profile", user_path(user) %>
-
-<h2>Tomorrow's Workout</h2>
-
-<p>Cardio: </p>
-
-<p>Strength: </p>
-
-
+<br>
+<%= link_to "See Your Workouts!", user_workouts_path(@user), class: "btn btn-primary" %>
 
 <div class="container">
 
@@ -30,7 +17,6 @@
 
 	<br>
 	<br>
-	<%= link_to "Edit Profile", edit_user_path(@user) %>
-	<%= link_to "Go back to your workouts!", users_path(@user) %>
+	<%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %>
 
 </div>
