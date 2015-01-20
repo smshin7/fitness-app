@@ -1,22 +1,71 @@
-<h1>JOIN US</h1>
+<div class="text-center">
+	<h1>Create A New Account</h1>
+</div>
 
-<%= form_for @user do |f| %>
-	<%= f.text_field :first_name, placeholder: "First Name" %><br>
-	<%= f.text_field :last_name, placeholder: "Last Name" %><br>
-	<%= f.number_field :age, placeholder: "Age" %><br>
-	<!-- Gender: <%= f.text_field :gender, placeholder: "Gender" %> gonna use radio button-->
- 	<%= f.text_field :email, placeholder: "E-mail Address" %><br>
- 	<!-- <%= f.number_field :height, placeholder: "" %><br>
- 	<%= f.number_field :weight, placeholder: "" %><br> -->
- 	<%= f.text_field :location, placeholder: "Location - city state" %><br>
- 	<%= f.text_field :gym, placeholder: "Which gym do you go to?" %><br>
- 	<%= f.text_field :goal, placeholder: "What are your fitness goals" %><br>
+	<form class="form-horizontal">
+		<%= form_for @user do |f| %>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">First Name</label>
+				<div class="col-sm-10">
+	      	<%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+	    	</div>
+	  </div>
+	  <div class="form-group">
+			<label class="col-sm-2 control-label">Last Name</label>
+				<div class="col-sm-10">
+					<%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+				</div>
+		</div>
+	 	<div class="form-group">
+			<label class="col-sm-2 control-label">Age</label>
+				<div class="col-sm-10">
+					<%= f.number_field :age, placeholder: "Age", class: "form-control" %>
+				</div>
+		</div>
+			<!-- Gender: <%= f.text_field :gender, placeholder: "Gender" %> gonna use radio button-->
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Email</label>
+				<div class="col-sm-10">
+					<%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+				</div>
+		</div>
+		 	<!-- <%= f.number_field :height, placeholder: "" %><br>
+		 	<%= f.number_field :weight, placeholder: "" %><br> -->
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Location</label>
+				<div class="col-sm-10">
+					<%= f.text_field :location, placeholder: "Location", class: "form-control" %>
+				</div>
+		</div>
+	 	<div class="form-group">
+			<label class="col-sm-2 control-label">Gym</label>
+				<div class="col-sm-10">
+					<%= f.text_field :gym, placeholder: "Gym", class: "form-control" %>
+				</div>
+		</div>
+	 	<div class="form-group">
+			<label class="col-sm-2 control-label">Goal</label>
+				<div class="col-sm-10">
+					<%= f.text_field :goal, placeholder: "Goal", class: "form-control" %>
+				</div>
+		</div>
+	 	<div class="form-group">
+			<label class="col-sm-2 control-label">Password</label>
+				<div class="col-sm-10">
+					<%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+				</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Confirm Password</label>
+				<div class="col-sm-10">
+					<%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "form-control" %>
+				</div>
+		</div>
+		<div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	 		<%= f.submit "Create profile", class: "btn btn-default" %>
+	    </div>
+	  </div>
 
- 	<p>Password</p>
- 	<%= f.password_field :password %>
- 	<p>Confirm Password</p>
- 	<%= f.password_field :password_confirmation %>
- 	<br>
-	<%= f.submit "Create profile" %>
-	
-<% end %>
+		<% end %>
+	</form>

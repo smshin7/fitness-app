@@ -1,21 +1,61 @@
 <h2>Edit Profile</h2>
 
-	<%= form_for @user do |f| %>
-		<%= f.text_field :first_name, placeholder: "First Name" %><br>
-		<%= f.text_field :last_name, placeholder: "Last Name" %><br>
-		<%= f.number_field :age, placeholder: "Age" %><br>
-		<!-- Gender: <%= f.text_field :gender, placeholder: "Gender" %> gonna use radio button-->
-	 	<%= f.text_field :email, placeholder: "E-mail Address" %><br>
-	 	<!-- <%= f.number_field :height, placeholder: "" %><br>
-	 	<%= f.number_field :weight, placeholder: "" %><br> -->
-	 	<%= f.text_field :location, placeholder: "Location - city state" %><br>
-	 	<%= f.text_field :gym, placeholder: "Which gym do you go to?" %><br>
-	 	<%= f.text_field :goal, placeholder: "What are your fitness goals" %><br>
+<form class="form-horizontal">
+		<%= form_for @user do |f| %>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">First Name</label>
+				<div class="col-sm-10">
+	      	<%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+	    	</div>
+	  </div>
+	  <div class="form-group">
+			<label class="col-sm-2 control-label">Last Name</label>
+				<div class="col-sm-10">
+					<%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+				</div>
+		</div>
+	 	<div class="form-group">
+			<label class="col-sm-2 control-label">Age</label>
+				<div class="col-sm-10">
+					<%= f.number_field :age, placeholder: "Age", class: "form-control" %>
+				</div>
+		</div>
+			<!-- Gender: <%= f.text_field :gender, placeholder: "Gender" %> gonna use radio button-->
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Email</label>
+				<div class="col-sm-10">
+					<%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+				</div>
+		</div>
+		 	<!-- <%= f.number_field :height, placeholder: "" %><br>
+		 	<%= f.number_field :weight, placeholder: "" %><br> -->
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Location</label>
+				<div class="col-sm-10">
+					<%= f.text_field :location, placeholder: "Location", class: "form-control" %>
+				</div>
+		</div>
+	 	<div class="form-group">
+			<label class="col-sm-2 control-label">Gym</label>
+				<div class="col-sm-10">
+					<%= f.text_field :gym, placeholder: "Gym", class: "form-control" %>
+				</div>
+		</div>
+	 	<div class="form-group">
+			<label class="col-sm-2 control-label">Goal</label>
+				<div class="col-sm-10">
+					<%= f.text_field :goal, placeholder: "Goal", class: "form-control" %>
+				</div>
+		</div>
 
-      <%= f.submit "Submit these changes!" %>
+		<div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	 		<%= f.submit "Submit These Changes", class: "btn btn-default" %>
+	    </div>
+	  </div>
 
-  <% end %>
+     <%= link_to "Back to profile", @user, class: "btn btn-primary" %>
 
-    </br>
-
-    <%= link_to "Back to profile", @user %>
+	<% end %>
+</form>
+   

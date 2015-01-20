@@ -1,9 +1,32 @@
 <h1>Login</h1>
 
-<%= form_for :user, url: '/login' do |f| %>
+		<%= form_for :user, url: '/login' do |f| %>
+			Email:	<%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+			Password: <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+			<%= f.submit %>
+		<% end %>
 
-	Email: <%= f.text_field :email %><br>
-	Password: <%= f.password_field :password %><br>
-	<%= f.submit "Login" %>
+	<!-- 	<h1>Login</h1>
 
-<% end %>
+	<form class="form-horizontal">
+		<%= form_for :user, url: '/login' do |f| %>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Email</label>
+			<div class="col-sm-10">
+				<%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Password</label> 
+			<div class="col-sm-10">
+				<%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+			</div>
+		</div>
+			
+		<div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	 		<%= f.submit "Login", class: "btn btn-default" %>
+	    </div>
+	  </div>
+		<% end %>
+	</form> -->
