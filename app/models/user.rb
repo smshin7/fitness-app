@@ -7,14 +7,10 @@ class User
   field :email, type: String
   field :age, type: Integer
   field :gender, type: String
-  field :height, type: Integer
-  field :weight, type: Integer
   field :location, type: String
-  field :gym, type: String
   field :goal, type: String
   field :password_digest, type: String
   has_many :workouts
-  accepts_nested_attributes_for :workouts
 
   has_secure_password
 

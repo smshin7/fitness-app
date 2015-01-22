@@ -1,9 +1,12 @@
-<h1>Login</h1>
+
 
 		<%= form_for :user, url: '/login' do |f| %>
+		<div class="well">
+		<h1>Login</h1>
 			Email:	<%= f.text_field :email, placeholder: "Email", class: "form-control" %>
 			Password: <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
-			<%= f.submit %>
+			<%= f.submit "Log In", class: "btn btn-default" %>
+		</div>
 		<% end %>
 
 	<!-- 	<h1>Login</h1>

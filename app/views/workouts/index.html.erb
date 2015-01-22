@@ -4,23 +4,26 @@
 	<div class="well">
 		<div class="text-center">
 			<h1>Workout of the Day</h1>
-			<h3>Date: </h3>
+			<h3><%= Time.now.strftime("%A %B %e, %Y") %> </h3>
 		</div>
-			<strong><p>Cardio: </p></strong>
-			<strong><p>Strength: </p></strong>
-			<%= link_to "Add New Workout", @new_user_workout, class: "btn btn-primary"%>
+			<strong><p>Type of Lift: </p></strong>
+			<strong><p>Weight (lbs): </p></strong>
+			<strong><p>Reps: </p></strong>
+			<strong><p>Sets: </p></strong>
+			<%= link_to "Add New Workout", new_user_workout_path, class: "btn btn-primary" %>
 	</div>
 </div>
 
-<%= link_to "View Your profile", @user %>
+<div class="text-center">
+	<%= link_to "View Your profile", @user, class: "btn btn-primary" %>
+</div>
+<br>
 
 <div class="row-lg-6">
 	<div class="well">
 		<div class="text-center">
 			<h2>Tomorrow's Workout</h2>
 		</div>
-			<strong><p>Cardio: </p></strong>
-			<strong><p>Strength: </p></strong>
 	</div>
 </div>
 

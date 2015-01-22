@@ -8,7 +8,7 @@ class WorkoutsController < ApplicationController
 
 	def new
 		@user = User.find(params[:user_id])
-		@workout = Workout.new
+		@workouts = @user.workouts.new
 	end
 
 	def create

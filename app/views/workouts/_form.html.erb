@@ -1,0 +1,8 @@
+<%= form_for @workouts do |f| %>
+
+	Day: <%= f.text_field :day_of_week%>
+	Type: <%= f.text_field :type %>
+	Distance: <%= f.number_field :distance %>
+	Time: <%= f.number_field :time %>
+
+<% end %>
