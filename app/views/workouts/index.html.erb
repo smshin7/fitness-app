@@ -1,17 +1,27 @@
 <div class="container">
 
-<div class="row-lg-6">
-	<div class="well">
 		<div class="text-center">
 			<h1>Workout of the Day</h1>
 			<h3><%= Time.now.strftime("%A %B %e, %Y") %> </h3>
 		</div>
-			<strong><p>Type of Lift: </p></strong>
-			<strong><p>Weight (lbs): </p></strong>
-			<strong><p>Reps: </p></strong>
-			<strong><p>Sets: </p></strong>
+
+<div class="row-lg-6">
+
+		<div class="text-center">
 			<%= link_to "Add New Workout", new_user_workout_path, class: "btn btn-primary" %>
-	</div>
+		</div>
+		<br>
+			<% @workouts.each do |w| %>
+			<div class="panel panel-default">
+				<div class="panel-title"><h5><%= w.workout_type %></h5></div>
+					<div class="panel-body">
+						<strong><p>Type of Lift: <%= w.lift %></p></strong>
+						<strong><p>Weight (lbs): <%= w.weight %></p></strong>
+						<strong><p>Reps: <%= w.rep %></p></strong>
+						<strong><p>Sets: <%= w.set_count %></p></strong>
+					</div>
+			</div>
+			<% end %>
 </div>
 
 <div class="text-center">

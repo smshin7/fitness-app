@@ -10,6 +10,7 @@ class User
   field :location, type: String
   field :goal, type: String
   field :password_digest, type: String
+  
   has_many :workouts
 
   has_secure_password

@@ -1,8 +1,27 @@
-<%= form_for @workouts do |f| %>
+<%= form_for [@user, @workout] do |f| %>
+	<div class="form-group">
+		<%= f.label :workout_type, "Workout Type" %> 
+		<%= f.text_field :workout_type, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :lift, "Type of Lift" %> 
+		<%= f.text_field :lift, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :weight, "Weight (lbs)" %> 
+		<%= f.number_field :weight, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :rep, "Reps" %> 
+		<%= f.number_field :rep, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :set_count, "Sets" %> 
+		<%= f.number_field :set_count, class: "form-control" %>
+	</div>
 
-	Day: <%= f.text_field :day_of_week%>
-	Type: <%= f.text_field :type %>
-	Distance: <%= f.number_field :distance %>
-	Time: <%= f.number_field :time %>
+	<div class="form-group">
+		<%= f.submit class: "btn btn-default" %>
+	</div>
 
 <% end %>

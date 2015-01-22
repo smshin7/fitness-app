@@ -1,11 +1,11 @@
 class Workout
   include Mongoid::Document
   include Mongoid::Timestamps
-  field :type, type: String
+  field :workout_type, type: String
   field :lift, type: String
   field :weight, type: Integer
-  field :set, type: Integer
-  field :reps, type: Integer
+  field :set_count, type: Integer
+  field :rep, type: Integer
 
   # embeds_many :cardio
   # embeds_many :strength
