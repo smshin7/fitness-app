@@ -39,6 +39,15 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+##### CarrierWave Gems ######
+gem "carrierwave"
+gem "carrierwave-mongoid", :require => "carrierwave/mongoid"
+
+gem 'fog'
+gem 'mini_magick'
+
+gem 'figaro'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

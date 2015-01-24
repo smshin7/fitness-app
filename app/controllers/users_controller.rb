@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+	def index
+		@users = User.where(user: @user).all
+	end
+
 	def show
 		@user = User.find(params[:id])
 	end
@@ -9,22 +13,24 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.new(params.require(:user).permit(:first_name, :last_name, :age, :gender, :email, :location, :goal, :password, :password_confirmation))
+		@user = User.new(user_params)
 	
 		if @user.save
+			flash.now[:info] = "New User Created"
 			redirect_to @user
 		else
+			flash.now[:danger] = @user.errors.full_messages.to_sentence
 			render :new
 		end
 	end
 
 	def edit
-		@user = User.find(params[:id])
+		get_user
 	end
 
 	def update
 			@user = User.find(params[:id])
-		if @user.update(params.require(:user).permit(:first_name, :last_name, :age, :gender, :email, :height, :weight, :location, :gym, :goal))
+		if @user.update(user_params)
 			redirect_to @user
 		else
 			render :edit
@@ -35,6 +41,16 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@user.destroy
 		redirect_to @user
+	end
+
+	def get_user
+		@user = User.find(params[:id])
+	end
+
+	private
+
+	def user_params
+		params.require(:user).permit(:first_name, :last_name, :age, :gender, :email, :height, :weight, :location, :profile_pic, :goal)
 	end
 
 end

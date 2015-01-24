@@ -1,37 +1,34 @@
 class CardiosController < ApplicationController
+	before_action :authorize
+	before_action :get_user
+	before_action :get_workout
 
 	def index
-		@user = User.find(params[:user_id])
-		@workout = Workout.find(params[:id])
-		@cardios = Cardio.all
+		@cardios = Cardio.where(:user @user, :workout @workout).all
+	end
+
+	def show
+		@cardio = Cardio.find(params[:id])
 	end
 
 	def new
-		@user = User.find(params[:user_id])
-		@workout = Workout.find(params[:id])
-		@cardio = Cardio.new
 	end
 
-	# def show
-	# 	@user = User.find(params[:user_id])
-	# 	@workout = Workout.find(params[:id])
-
-	# end
-
-	def edit
-		@user = User.find(params[:user_id])
-		@workout = Workout.find(params[:id])
+	def create
 	end
 
-	def update
+	def get_user
 		@user = User.find(params[:user_id])
-		@workout = Workout.find(params[:id])
 	end
 
-	def destroy
-		@user = User.find(params[:user_id])
-		@workout = Workout.find(params[:id])
-		@user.workout.cardio.destroy
+	def get_workout
+		@workout = Workout.find(params[:workout_id])
+	end
+
+	private
+
+	def cardio_params
+		params.require(:cardio).permit!
 	end
 
 end

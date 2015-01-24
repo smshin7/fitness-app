@@ -1,7 +1,12 @@
 <%= form_for [@user, @workout] do |f| %>
 	<div class="form-group">
 		<%= f.label :workout_type, "Workout Type" %> 
-		<%= f.text_field :workout_type, class: "form-control" %>
+		<div>
+			<%= f.radio_button(:workout_type, "Cardio") %>
+			<%= label_tag(:workout_type, "Cardio") %>
+			<%= f.radio_button(:workout_type, "Strength Training") %>
+			<%= label_tag(:workout_type, "Strength Training") %>
+		</div>
 	</div>
 	<div class="form-group">
 		<%= f.label :lift, "Type of Lift" %> 
@@ -21,7 +26,7 @@
 	</div>
 
 	<div class="form-group">
-		<%= f.submit class: "btn btn-default" %>
+		<%= f.submit class: "btn btn-success" %>
 	</div>
 
 <% end %>

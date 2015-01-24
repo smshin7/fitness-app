@@ -1,0 +1,13 @@
+<h1>All ze Users</h1>
+
+<% @users.each do |u| %>
+	
+	<div>
+		<%= link_to u.first_name, user_path(u) %>
+	</div>
+	<div>
+		<%= u.goal %>
+	</div>
+	<br>
+
+<% end %>

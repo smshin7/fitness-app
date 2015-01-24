@@ -1,0 +1,15 @@
+<%= link_to "Back to Workouts", user_workouts_path, class: "btn btn-large btn-default" %>
+
+<h1><%= @workout.lift %></h1>
+<br>
+<div>
+	<strong>Weight:</strong>
+		<div><%= @workout.weight %> lbs</div>
+	<strong>Sets:</strong>
+		<div><%= @workout.set_count %></div>
+	<strong>Reps:</strong>
+		<div><%= @workout.rep %></div>
+</div>
+			<%= link_to "Edit Workout", edit_user_workout_path(@workout.user.id, @workout.id), class: "btn btn-success" %>
+
+			<%= link_to "Delete Workout", user_workout_path(@workout.user.id, @workout.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>

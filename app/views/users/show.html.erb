@@ -7,12 +7,28 @@
 	<div class="well">
 
 	 	<h1>Profile</h1>
-				<strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %><br>
-				<strong>Age:</strong> <%= @user.age %><br>
-				<strong>Gender:</strong> <%= @user.gender %><br>
-				<strong>E-mail:</strong> <%= @user.email %><br>
-				<strong>Location:</strong> <%= @user.location %><br>
-				<strong>Goals:</strong> <%= @user.goal %><br>
+	 			<div>
+	 				<%= image_tag @user.profile_pic.url(:profile), class: "img-thumbnail" %>
+	 			</div>
+	 			<br>
+	 			<div>
+					<strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %>
+				</div>
+				<div>
+					<strong>Age:</strong> <%= @user.age %>
+				</div>
+				<div>
+					<strong>Gender:</strong> <%= @user.gender %>
+				</div>
+				<div>
+					<strong>E-mail:</strong> <%= @user.email %>
+				</div>
+				<div>
+					<strong>Location:</strong> <%= @user.location %>
+				</div>
+				<div>
+					<strong>Primary Fitness Goal:</strong> <%= @user.goal %>
+				</div>
 		<br>
 		<br>
 		<%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %>

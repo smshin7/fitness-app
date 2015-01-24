@@ -1,5 +1,6 @@
 class Cardio
 	include Mongoid::Document
+	include Mongoid::Timestamps
   field :type, type: String
   field :distance, type: Float
   field :time, type: Float

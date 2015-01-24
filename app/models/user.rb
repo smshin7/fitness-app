@@ -10,12 +10,13 @@ class User
   field :location, type: String
   field :goal, type: String
   field :password_digest, type: String
+  mount_uploader :profile_pic, ProfilePicUploader
   
   has_many :workouts
 
   has_secure_password
 
-  validates :first_name, :last_name, :email, :age, presence: true
+  validates :first_name, :last_name, :email, :age, :gender, presence: true
   validates :email, uniqueness: {case_sensitive: false}
   validates :password, confirmation: true
 

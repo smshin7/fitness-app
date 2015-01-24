@@ -6,10 +6,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   
-  resources :users, except: :destroy do 
-  	resources :workouts do 
-  		# resources :cardios
-  		# resources :strengths
+  resources :users do 
+  	resources :workouts do
+      resources :cardios
   	end
   end
 

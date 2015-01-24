@@ -1,5 +1,47 @@
 <div class="well">
 	<h2>Edit Profile</h2>
 
-	<%= render "form" %>
+	<%= form_for @user do |f| %>
+			<div class="form-group">
+				<%= f.label :first_name, "First Name" %>
+				<%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+			</div>
+			<div class="form-group">
+			  <%= f.label :last_name, "Last Name" %>
+			  <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.label :age, "Age" %>
+				<%= f.number_field :age, placeholder: "Age", class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.label :gender, "Gender" %> 
+				<div>
+					<%= f.radio_button :gender, "Female" %>
+					<%= f.label :gender, "Female" %>
+					<%= f.radio_button :gender, "Male" %>
+					<%= f.label :gender, "Male" %>
+				</div>
+			</div>
+			<div class="form-group">	
+	 			<%= f.label :email, "Email" %>
+	 			<%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.label :location, "Location" %>
+				<%= f.text_field :location, placeholder: "Location", class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.label :goal, "Primary Fitness Goal" %>
+				<%= f.select(:goal, options_for_select(['Weight Loss', 'Build Muscle', 'Athletic Performance']), { :prompt => "Primary Fitness Goal" }, {class: "form-control"}) %>
+			</div>
+			<div class='form-group'>
+				<%= f.label :profile_pic, "Profile Picture" %>
+    		<%= f.file_field :profile_pic %>
+  		</div>
+			<div class="form-group">
+		 		<%= f.submit class: "btn btn-primary" %>
+		 	</div>
+
+<% end %>
 </div>

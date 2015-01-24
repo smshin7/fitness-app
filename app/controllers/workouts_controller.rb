@@ -1,9 +1,13 @@
 class WorkoutsController < ApplicationController
 	before_action :authorize
-	before_action :get_user
+	before_action :get_user # only: [:index, :new, :create]
 
 	def index
-		@workouts = Workout.where(user: @user).all
+		@workouts = Workout.where(user: @user).all.order(created_at: :desc)
+	end
+
+	def show
+		@workout = @user.workouts.find(params[:id])
 	end
 
 	def new
@@ -14,28 +18,33 @@ class WorkoutsController < ApplicationController
 		@workout = @user.workouts.create(workout_params)
 		
 		if @user.save
+			flash[:info] = "New Workout Logged!"
 			redirect_to user_workouts_path
 		else
+			flash.now[:danger] = @workout.errors.full_messages.to_sentence
 			render :new
 		end
 	end
 
 	def edit
-		@workout = @user.workout.find_by(params[:id])
+		@workout = @user.workouts.find(params[:id])
 	end
 
 	def update
-		# @user = User.find(params[:user_id])
-		if @user.workout.find(params[:id]).update_attributes(workout_params)
-			redirect_to user_path(@user)
+		@workout = @user.workouts.find(params[:id])
+		if @workout.update_attributes(workout_params)
+			flash.now[:success] = "Workout edit successful"
+			redirect_to user_workouts_path
 		else
-			render :new
+			render :edit
 		end
 	end
 
 	def destroy
-		@user.workout.find(params[:id].destroy)
-		redirect_to user_path(@user)
+		@workout = @user.workouts.find(params[:id])
+		@workout.destroy
+		flash.now[:danger] = "Workout Deleted!"
+		redirect_to user_workouts_path
 	end
 
 	def get_user
