@@ -7,8 +7,8 @@ class Workout
   field :set_count, type: Integer
   field :rep, type: Integer
 
-  embeds_many :cardio
-  accepts_nested_attributes_for :cardio
+  # embeds_many :cardio
+  # accepts_nested_attributes_for :cardio
   # embeds_many :strength
   # accepts_nested_attributes_for :strength
 
