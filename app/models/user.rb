@@ -10,6 +10,7 @@ class User
   field :location, type: String
   field :goal, type: String
   field :password_digest, type: String
+ 
   mount_uploader :profile_pic, ProfilePicUploader
   
   has_many :workouts
