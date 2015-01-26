@@ -1,7 +1,25 @@
 body {
-	background-color: white;
+	background-color: peachpuff;
 	padding-top: 75px;
 }
 .form-control {
 	width: 200px;
+}
+
+.navbar-default {
+	height: 50px;
+}
+
+div.container-fluid {
+	padding-bottom: 15px;
+	width: 80%;
+	height: 100%;
+	background-color: white;
+}
+
+footer {
+	width: 100%;
+	bottom: 0;
+	height: 20px;
+	left: 0;
 }

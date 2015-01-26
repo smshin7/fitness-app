@@ -5,8 +5,6 @@
 			<h3><%= Time.now.strftime("%A %B %e, %Y") %> </h3>
 		</div>
 
-	<div class="row-lg-6">
-
 		<div class="pull-left">
 			<%= link_to "Add New Workout", new_user_workout_path, class: "btn btn-success" %>
 		</div>
@@ -15,21 +13,15 @@
 
 			<% @workouts.each do |w| %>
 			<!-- <div class="panel panel-default"> -->
-				<div class="panel-title">
+				<div>
 					<h3><%= link_to w.lift, user_workout_path(w.user.id, w.id) %></h3>
 				</div>
-					<div class="panel-body">
+					<div>
 						<strong><p><%= w.workout_type %></p></strong>
 						<strong><p>Weight (lbs): <%= w.weight %></p></strong>
 						<strong><p>Reps: <%= w.rep %></p></strong>
 						<strong><p>Sets: <%= w.set_count %></p></strong>
 					</div>
 
-			<!-- 	You have to pass in both the user.id and the workout.id -->
-
-			</div>
 		<% end %>
 	</div>
-
-
-</div>	
