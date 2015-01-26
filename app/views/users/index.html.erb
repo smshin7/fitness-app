@@ -1,13 +1,17 @@
-<h1>All ze Users</h1>
+<div class="container-fluid">
+	<h1>All ze Users</h1>
 
-<% @users.each do |u| %>
+	<% @users.each do |u| %>
 	
-	<div>
-		<%= link_to u.first_name, user_path(u) %>
-	</div>
-	<div>
-		<%= u.goal %>
-	</div>
-	<br>
+		<div class="well">
+			<div>
+				<%= link_to u.first_name, user_path(u) %>
+			</div>
+			<div>
+				Fitness Goal: <%= u.goal %>
+			</div>
+			<br>
+		</div>
 
-<% end %>
+	<% end %>
+</div>
