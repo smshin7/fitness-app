@@ -10,11 +10,23 @@ body {
 	height: 50px;
 }
 
+.homepage-image {
+	border-radius: 10px;
+	text-align: center;
+	width: 50%;
+	height: 50%;
+}
+
+
 div.container-fluid {
 	padding-bottom: 15px;
-	width: 80%;
+	width: 75%;
 	height: 100%;
 	background-color: white;
+}
+
+.col-md-8 {
+	padding-left: 100px;
 }
 
 footer {
