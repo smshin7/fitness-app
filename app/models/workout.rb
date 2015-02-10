@@ -14,6 +14,7 @@ class Workout
 
   belongs_to :user
 
+  #validations for workout model
   validates :workout_type, presence: true
   validates :lift, presence: true
   validates :set_count, presence: true

@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 	def new
 	end
 
+	# creates a session for current user by finding User id
 	def create
 		user = User.find_by(email: params[:user][:email])
 	
@@ -14,6 +15,7 @@ class SessionsController < ApplicationController
 			end
 	end
 
+	# method logs user out of session
 	def destroy
 		session[:user_id] = nil
 		redirect_to '/login'

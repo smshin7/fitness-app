@@ -1,16 +1,15 @@
-
-
+	<!-- This is a sign in form for user -->
 		<%= form_for :user, url: '/login' do |f| %>
-		<div class="container-fluid">
-		<h1>Login</h1>
-			<div class="form-group">
-				<%= f.label :email %>
-				<%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+			<div class="container-fluid">
+			<h1>Login</h1>
+				<div class="form-group">
+					<%= f.label :email %>
+					<%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= f.label :password %>
+					<%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+				</div>
+				<%= f.submit "Log In", class: "btn btn-success" %>
 			</div>
-			<div class="form-group">
-				<%= f.label :password %>
-				<%= f.password_field :password, placeholder: "Password", class: "form-control" %>
-			</div>
-			<%= f.submit "Log In", class: "btn btn-success" %>
-		</div>
 		<% end %>

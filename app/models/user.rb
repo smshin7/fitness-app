@@ -11,12 +11,15 @@ class User
   field :goal, type: String
   field :password_digest, type: String
  
+  # photo uploader using Carrierwave gem
   mount_uploader :profile_pic, ProfilePicUploader
   
+  # relationship for workouts
   has_many :workouts
 
   has_secure_password
 
+  # validations for user model
   validates :first_name, :last_name, :email, :age, :gender, presence: true
   validates :email, uniqueness: {case_sensitive: false}
   validates :password, confirmation: true
