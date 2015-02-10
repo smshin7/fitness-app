@@ -34,7 +34,7 @@ class WorkoutsController < ApplicationController
 		@workout = @user.workouts.find(params[:id])
 	end
 
-	# action to edit workout for
+	# action to edit workout for current user
 	def update
 		@workout = @user.workouts.find(params[:id])
 		if @workout.update_attributes(workout_params)
